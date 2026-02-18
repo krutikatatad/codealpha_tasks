@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FAQ Chatbot</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .chatbox {
+            background: white;
+            width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        input {
+            width: 75%;
+            padding: 8px;
+        }
+        button {
+            padding: 8px;
+            background: #007bff;
+            color: white;
+            border: none;
+        }
+        .response {
+            margin-top: 15px;
+            padding: 10px;
+            background: #e9ecef;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="chatbox">
+    <h2>🤖 FAQ Chatbot</h2>
+
+    <form method="POST">
+        <input type="text" name="message" placeholder="Ask your question..." required>
+        <button type="submit">Send</button>
+    </form>
+
+    {% if response %}
+    <div class="response">
+        <strong>Bot:</strong> {{ response }}
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
